@@ -1,4 +1,4 @@
-var cacheName = 'cache-v1'; //Cache Name
+var CACHE_NAME = 'cache-v1'; //Cache Name
 
 //Files to cache
 var filesToCache = [
@@ -10,24 +10,17 @@ var filesToCache = [
 ];
 
 //Adding 'install' event listener
-self.addEventListener('install', function (event) {
-  console.log('Event: Install');
-
-  //Adding the static resources to cache
+self.addEventListener('install', function(event) {
+  // Perform install steps
   event.waitUntil(
-  	//Open the cache
-  	caches.open(cacheName)
-  		.then(function (cache) {
-  			//Adding the files to cache
-  			return cache.addAll(filesToCache)
-  				.then(function () {
-  					console.log("All files are cached.");
-  				})
-  		})
-  		.catch(function (err) {
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(urlsToCache);
+      })
+			.catch(function (err) {
   			console.log("Error occurred while caching ", err);
   		})
-	);
+  );  
 });
 
 //Adding 'activate' event listener
