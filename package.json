@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Progressive Web Apps Music list",
   "scripts": {
-    "start": "npm run css",
+    "start": "npm run css && node server.js",
     "css": "postcss -u autoprefixer -r css/*",
     "postinstall": "npm run start"
   },
