@@ -61,6 +61,9 @@
                             });
                             var messaging = firebase.messaging();
                             console.log(messaging);
+                            messaging.onMessage(function(payload) {
+                                console.log("Message received. ", payload);
+                            });
                         }
                     })
                     .catch(function(error) {
