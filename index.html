@@ -55,7 +55,12 @@
                             console.log('Service worker is waiting!');
                         }
                         else if (register.active) {
-                            console.log('Service worker is active!');
+                            console.log('Service worker is active!', register);
+                            firebase.initializeApp({
+                                'messagingSenderId': '307842747987
+                            });
+                            var messaging = firebase.messaging();
+                            console.log(messaging);
                         }
                     })
                     .catch(function(error) {
@@ -67,6 +72,8 @@
         </script>
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js'"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-messaging.js'"></script>
         <script src="./js/toast.js" type="text/javascript"></script>
         <script src="./js/menu.js" type="text/javascript"></script>
         <script src="./js/app.js" type="text/javascript"></script>
