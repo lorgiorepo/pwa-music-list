@@ -43,7 +43,7 @@ self.addEventListener('fetch', function(event) {
 
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then(function(cached) {
 
 				var networked = fetch(event.request)
           // We handle the network request with success and failure scenarios.
