@@ -45,18 +45,8 @@
         <div class="toast__msg"></div>
 
         <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-        <script>
-        // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyDMGRyx3GtFLEDUkiTW4uplGx5VOJsJ1-A",
-                authDomain: "pwa-music.firebaseapp.com",
-                databaseURL: "https://pwa-music.firebaseio.com",
-                projectId: "pwa-music",
-                storageBucket: "pwa-music.appspot.com",
-                messagingSenderId: "307842747987"
-            };
-            firebase.initializeApp(config);
-        </script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-messaging.js"></script>
 
         <script type="text/javascript">
             if('serviceWorker' in navigator) {
@@ -70,6 +60,15 @@
                         }
                         else if (register.active) {
                             console.log('Service worker is active!', register);
+                            var config = {
+                                apiKey: "AIzaSyDMGRyx3GtFLEDUkiTW4uplGx5VOJsJ1-A",
+                                authDomain: "pwa-music.firebaseapp.com",
+                                databaseURL: "https://pwa-music.firebaseio.com",
+                                projectId: "pwa-music",
+                                storageBucket: "pwa-music.appspot.com",
+                                messagingSenderId: "307842747987"
+                            };
+                            firebase.initializeApp(config);
                             var messaging = firebase.messaging();
                             console.log(messaging);
                             messaging.onMessage(function(payload) {
@@ -86,8 +85,6 @@
         </script>
         <script src="https://unpkg.com/vue"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-messaging.js"></script>
         <script src="./js/toast.js" type="text/javascript"></script>
         <script src="./js/menu.js" type="text/javascript"></script>
         <script src="./js/app.js" type="text/javascript"></script>
