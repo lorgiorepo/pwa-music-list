@@ -44,6 +44,10 @@
         <!-- Toast msg -->
         <div class="toast__msg"></div>
 
+        <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-messaging.js"></script>
+
         <script type="text/javascript">
             if('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('./service-worker.js')
@@ -55,7 +59,21 @@
                             console.log('Service worker is waiting!');
                         }
                         else if (register.active) {
-                            console.log('Service worker is active!');
+                            console.log('Service worker is active!', register);
+                            var config = {
+                                apiKey: "AIzaSyDMGRyx3GtFLEDUkiTW4uplGx5VOJsJ1-A",
+                                authDomain: "pwa-music.firebaseapp.com",
+                                databaseURL: "https://pwa-music.firebaseio.com",
+                                projectId: "pwa-music",
+                                storageBucket: "pwa-music.appspot.com",
+                                messagingSenderId: "307842747987"
+                            };
+                            firebase.initializeApp(config);
+                            var messaging = firebase.messaging();
+                            console.log(messaging);
+                            messaging.onMessage(function(payload) {
+                                console.log("Message received. ", payload);
+                            });
                         }
                     })
                     .catch(function(error) {
