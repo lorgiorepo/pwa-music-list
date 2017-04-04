@@ -1,7 +1,8 @@
-var cacheName = 'cache-v1'; //Cache Name
+var CACHE_NAME = 'cache-v1'; //Cache Name
 
 //Files to cache
 var filesToCache = [
+	'/',
 	'./index.html',
 	'./index.html?utm=homescreen', //Query strings are treated as seperate page
 	'./css/styles.css',
@@ -10,24 +11,17 @@ var filesToCache = [
 ];
 
 //Adding 'install' event listener
-self.addEventListener('install', function (event) {
-  console.log('Event: Install');
-
-  //Adding the static resources to cache
+self.addEventListener('install', function(event) {
+  // Perform install steps
   event.waitUntil(
-  	//Open the cache
-  	caches.open(cacheName)
-  		.then(function (cache) {
-  			//Adding the files to cache
-  			return cache.addAll(filesToCache)
-  				.then(function () {
-  					console.log("All files are cached.");
-  				})
-  		})
-  		.catch(function (err) {
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(filesToCache);
+      })
+			.catch(function (err) {
   			console.log("Error occurred while caching ", err);
   		})
-	);
+  );  
 });
 
 //Adding 'activate' event listener
@@ -36,6 +30,17 @@ self.addEventListener('activate', function (event) {
 });
 
 //Adding 'fetch' event listener
-self.addEventListener('fetch', function (event) {
-  console.log('Event: Fetch - ', event.request.url);
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }
+    )
+  );
 });
