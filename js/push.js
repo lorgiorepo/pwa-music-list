@@ -50,6 +50,30 @@ function sendTokenToServer(token) {
 
     axios.post('https://android.googleapis.com/gcm/notification', params, config)
         .then(function(response) {
+            sendMessage(response.notification_key);
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+}
+
+function sendMessage(to) {
+    var config = {
+        headers: {
+            authorization: 'AAAAR6zbjlM:APA91bEZvz22XTQOgs2YA-cMqn16_1XsGVw2Z-SvBCVtnVEBSGIs-Pk5D6Y7oBTtcBzgmtcNXPpWxMh_wh7mst4bSbbXoYShtoLyO6P1v7rSRSYJIeDUr7p82X-307OmBoLZGNg1Psxx'
+        }
+    };
+
+    var params = {
+        to: 'add',
+        data: {
+            body: "Hola"
+        }
+    };
+
+    axios.post('https://fcm.googleapis.com/fcm/send', params, config)
+        .then(function(response) {
             console.log(response);
         })
         .catch(function(error) {
