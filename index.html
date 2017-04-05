@@ -85,14 +85,14 @@
                 firebase.initializeApp(config);
                 var messaging = firebase.messaging();
                 
-                syncToken();
+                syncToken(messaging);
                 
                 messaging.onMessage(function(payload) {
                     console.log("Message received. ", payload);
                 });
             }
 
-            function syncToken() {
+            function syncToken(messaging) {
                 messaging.getToken()
                 .then(function(currentToken) {
                     console.log(currentToken);
