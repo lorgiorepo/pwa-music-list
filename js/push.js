@@ -1,4 +1,5 @@
 function initMessaging() {
+    console.log('init messaging');
     var config = {
         apiKey: "AIzaSyDMGRyx3GtFLEDUkiTW4uplGx5VOJsJ1-A",
         authDomain: "pwa-music.firebaseapp.com",
