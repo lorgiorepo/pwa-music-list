@@ -62,7 +62,6 @@
                         }
                         else if (register.active) {
                             console.log('Service worker is active!', register);
-                            initMessaging();
                         }
                     })
                     .catch(function(error) {
@@ -71,6 +70,8 @@
             } else {
                 console.log('Service worker is not supported.');
             }
+
+            initMessaging();
 
             function initMessaging() {
                 console.log('init messaging');
