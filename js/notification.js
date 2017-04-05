@@ -25,6 +25,7 @@
       .then(function (registration) {
         registration.pushManager.getSubscription()
         .then(function (subscription) {
+            console.log(subscription);
           //If already access granted, enable push button status
           if (subscription) {
             changePushStatus(true);
