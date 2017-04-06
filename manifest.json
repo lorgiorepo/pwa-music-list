@@ -1,0 +1,22 @@
+{
+	"name": "Music Artist",
+	"short_name": "Music Artist",
+	"icons": [
+		{
+			"src": "./images/touch/android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./images/touch/android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"start_url": "./index.html?utm=homescreen",
+	"theme_color": "#2196f3",
+	"background_color": "#fff",
+	"display": "standalone",
+	"orientation": "portrait",
+    "gcm_sender_id": "307842747987"
+}
