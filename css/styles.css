@@ -1,10 +1,5 @@
-* {
-  box-sizing: border-box;
-  background-color: #458b00;
-}
-
 body {
-  font-family: 'Roboto',Helvetica,Arial,sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
@@ -33,7 +28,7 @@ li {
 
 .header__container {
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,6 +40,7 @@ li {
   margin: 0 auto;
   text-align: center;
 }
+
 .header__container .header__title h1 {
   font-size: 30px;
   line-height: 58px;
@@ -64,8 +60,7 @@ li {
   cursor: pointer;
 }
 
-.header__icon:focus,
-.header__icon:hover {
+.header__icon:focus, .header__icon:hover {
   opacity: 0.8;
   outline: 1px solid #fff;
 }
@@ -94,12 +89,12 @@ li {
   box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.4);
   z-index: 1;
   -webkit-transform: translateX(-103%);
-          transform: translateX(-103%);
+  transform: translateX(-103%);
 }
 
 .menu--show {
   -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 .menu__overlay {
@@ -131,11 +126,10 @@ li {
 }
 
 .menu__list li {
-  color: rgba(0,0,0,0.87);
+  color: rgba(0, 0, 0, 0.87);
 }
 
-.menu__list li:hover,
-.menu__list li:active {
+.menu__list li:hover, .menu__list li:active {
   background: #e7e7e7;
 }
 
@@ -159,18 +153,25 @@ li {
   width: 50%;
   margin: 57px auto;
 }
+
 .main ol {
-  list-style-position: inside;
+  list-style: none;
+  margin: 20px 0;
 }
+
 .main li {
-  border: solid 1px;
-  font-size: 30px;
+  font-size: 24px;
+  background-color: #EEE;
+  margin-top: 8px;
+  box-shadow: 1px 1px 5px #CCC;
+  padding: 12px 25px;
 }
+
 @media (max-width: 768px) {
   .main {
     width: 100%;
   }
-  .main ol{
+  .main ol {
     padding-left: 0;
   }
 }
@@ -186,13 +187,13 @@ li {
   margin-bottom: 10px;
   background-color: #404040;
   border-radius: 3px;
-  box-shadow: 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+  box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
   word-break: break-all;
   font-size: 15px;
   font-weight: 400;
   opacity: 0;
   -webkit-transform: translateY(20px);
-          transform: translateY(20px);
+  transform: translateY(20px);
   will-change: transform;
   position: fixed;
   bottom: 20px;
@@ -202,5 +203,21 @@ li {
 .toast__msg--show {
   opacity: 1;
   -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
+}
+
+.fab__push {
+  background-color: #333;
+  display: inline-block;
+  padding: 14px;
+  position: fixed;
+  bottom: 11px;
+  right: 7px;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px #999;
+  cursor: pointer;
+}
+
+.fab__push:active {
+  background-color: #666;
 }
