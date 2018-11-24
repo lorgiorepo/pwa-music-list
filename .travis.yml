@@ -4,10 +4,19 @@ addons:
     organization: "lorgiorepo-github" # the key of the org you chose at step #3
     token:
       secure: FIF1Z669qvLJdy+xPThF1DTOyLN0LFCLJTDEM/5ITxS5LtRtpN1DBuYVkDULBo7f2FuHTIyepfKrUHcreT/gId/lb7L3jZn4HI/YXQiFUbpD2krVrAYlFhFHPZ+MN2anR+Al/A/6FiuhnkyZiiQObbMHOyorBjGAI+6b5x1Qy+Vpx7Mj86d4/PpSGcUSzFuAvnF+35cY0XpzTWuHhwTf6HQIWSWOJfyFUZz2VUfrSwGeWyQx0Gj/RC4+Tv83fcZQYYQN6faZhY6gpCo7GYHuo54eTkrl7xiqF7XKX2eDNUg7JlcB3NC+auceHHCtdRivT7vbaJmHphLpJJ9U+3hLoDTtCzsbaSS8Y3n9k7hiLMDCiS8MWSaObnYZcnILfeOsiOKqRngVf+DQvMTZRSscIykqkYOrURXaAFMzRwj79rEhnbAAcuRK4wFMxdrqECmYpmy3AI301Q2fwPpAxvTFtYeZgc4ReaEheBpY5E7qTJuX2ER99B0V3CmJbTHJgRgcL7joPWi6p7T1md8H4VS8SZ88SdHGO2VhUya8+joz++dzMsyjdLZ4fBqS/qAGsKUx2br3RCOLXUDuguHUrktl9w9LGjq+MKxVZoqOmjs+Spy4B6pqMlkGEVUCPF9hNliNjO8uNijRrWAbApujJv1uCRgZx9U0P9Oa/HSkwspq04Q= # encrypted value of your token
-script:
-  # other script steps might be done before running the actual analysis
-  - sonar-scanner
-deploy:
-  provider: heroku
-  api_key:
-    secure: bb25dfba-03eb-4df8-8eba-61401196599c
+#script:
+#  # other script steps might be done before running the actual analysis
+#  - sonar-scanner
+jobs:
+  include:
+    - stage: Quality
+      name: "Sonar Analysis"
+      script: sonar-scanner
+    - stage: Deploy
+      if: branch = master
+      name: "Deploy yo Heroku"
+      script: skip
+      deploy: &heroku
+        provider: heroku
+        api_key:
+          secure: bb25dfba-03eb-4df8-8eba-61401196599c

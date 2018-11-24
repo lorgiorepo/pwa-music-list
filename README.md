@@ -1,6 +1,35 @@
-# pwa-music-list
+# pwa-music-list-api
 Progressive Web Apps Music List
 
-Este proyecto usa como backend el siguiente proyecto:
+[![Build Status](https://travis-ci.org/lorgiorepo/pwa-music-list.svg?branch=master)](https://travis-ci.org/lorgiorepo/pwa-music-list)
 
-https://github.com/lorgiorepo/pwa-music-list-api
+## Development
+
+### Dependencies
+- Node Version Manager (NVM)
+
+### Installation
+Install nvm and then use the default version for the project
+
+```sh
+$ nvm use
+```
+
+```sh
+$ npm install
+```
+
+### Run testing
+
+```sh
+$ npm run test
+```
+
+### Run api
+
+```sh
+$ npm run start
+```
+
+## Deploy
+Deploy on heroku through travis CI
