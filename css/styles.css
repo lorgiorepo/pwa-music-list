@@ -29,7 +29,6 @@ li {
 .header__container {
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: inherit;
@@ -82,18 +81,13 @@ li {
   top: 0;
   bottom: 0;
   will-change: transform;
-  -webkit-transition: -webkit-transform 0.33s cubic-bezier(0, 0, 0.30, 1);
-  transition: -webkit-transform 0.33s cubic-bezier(0, 0, 0.30, 1);
   transition: transform 0.33s cubic-bezier(0, 0, 0.30, 1);
-  transition: transform 0.33s cubic-bezier(0, 0, 0.30, 1), -webkit-transform 0.33s cubic-bezier(0, 0, 0.30, 1);
   box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.4);
   z-index: 1;
-  -webkit-transform: translateX(-103%);
   transform: translateX(-103%);
 }
 
 .menu--show {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 
@@ -106,7 +100,6 @@ li {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
-  -webkit-transition: opacity 0.15s cubic-bezier(0, 0, 0.30, 1);
   transition: opacity 0.15s cubic-bezier(0, 0, 0.30, 1);
   visibility: hidden;
   opacity: 0;
@@ -192,7 +185,6 @@ li {
   font-size: 15px;
   font-weight: 400;
   opacity: 0;
-  -webkit-transform: translateY(20px);
   transform: translateY(20px);
   will-change: transform;
   position: fixed;
@@ -202,7 +194,6 @@ li {
 
 .toast__msg--show {
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
