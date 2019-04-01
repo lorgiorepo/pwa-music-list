@@ -1,4 +1,4 @@
-var CACHE_NAME = 'cache-v1'; //Cache Name
+var CACHE_NAME = 'cache-v2'; //Cache Name
 
 //Files to cache
 var filesToCache = [
@@ -7,7 +7,9 @@ var filesToCache = [
 	'./index.html?utm=homescreen', //Query strings are treated as seperate page
 	'./css/styles.css',
     './js/menu.js',
-	'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' //3rd party resource
+  'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700', //3rd party resource
+  './images/push-off.png',
+  './images/push-on.png'
 ];
 
 //Adding 'install' event listener
