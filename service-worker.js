@@ -51,7 +51,7 @@ self.addEventListener('fetch', function(event) {
 // triggered everytime, when a push notification is received.
 self.addEventListener('push', function(event) {
 
-  console.info('Event: Push');
+  console.info('Event: Push', event);
 
   var title = 'New commit on Github Repo: RIL';
 
