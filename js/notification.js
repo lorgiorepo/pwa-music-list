@@ -125,7 +125,7 @@
   });
 
   function saveSubscriptionID(subscription) {
-    var subscription_id = subscription.endpoint.split('gcm/send/')[1];
+    var subscription_id = subscription.endpoint.split('fcm/send/')[1];
 
     console.log("Subscription ID", subscription_id);
 
@@ -140,7 +140,7 @@
   }
 
   function deleteSubscriptionID(subscription) {
-    var subscription_id = subscription.endpoint.split('gcm/send/')[1];
+    var subscription_id = subscription.endpoint.split('fcm/send/')[1];
 
     fetch('https://pwa-music-list-api.herokuapp.com/api/user/' + subscription_id, {
       method: 'delete',
