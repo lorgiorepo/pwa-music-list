@@ -34,6 +34,7 @@ self.addEventListener('activate', function (event) {
 //Adding 'fetch' event listener
 
 self.addEventListener('fetch', function(event) {
+  console.info('Event Fetch', event);
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
@@ -51,7 +52,7 @@ self.addEventListener('fetch', function(event) {
 // triggered everytime, when a push notification is received.
 self.addEventListener('push', function(event) {
 
-  console.info('Event: Push', event);
+  console.info('Event Push', event);
 
   var title = 'New commit on Github Repo: RIL';
 
@@ -68,7 +69,7 @@ self.addEventListener('push', function(event) {
 
 
 self.addEventListener('notificationclick', function(event) {
-
+  console.info('Event notificationclick', event);
   var url = './latest.html';
 
   event.notification.close(); //Close the notification
